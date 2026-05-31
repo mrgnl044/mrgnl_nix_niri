@@ -5,7 +5,7 @@
 		nixpkgs.url = "github:NixOs/nixpkgs/nixos-26.05";
 	};
 
-	outputs = { self, nixpkgs, ... } {
+	outputs = { self, nixpkgs, ... }: {
 		nixosConfigurations.t14 = nixpkgs.lib.nixosSystem {
 			system = "x86_64-linux";
 
