@@ -3,9 +3,6 @@
 {
   environment.systemPackages = with pkgs; [
     fish
-    kitty
-    firefox
-
     lsd
     bat
     zoxide
@@ -25,19 +22,5 @@
 
     unzip
     p7zip
-
-    brightnessctl
-    pavucontrol
-    playerctl
-
-    wl-clipboard
-    grim
-    slurp
-
-    pciutils
-    usbutils
-
-    waybar
-    fuzzel
   ];
 }
