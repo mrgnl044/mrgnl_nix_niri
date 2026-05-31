@@ -19,6 +19,7 @@
 
       ../../modules/networking/amneziawg.nix
 
+      ../../modules/hardware/audio.nix
       ../../modules/hardware/fonts.nix
     ];
 
