@@ -2,11 +2,11 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
 
       ../../modules/packages/cli.nix
@@ -15,7 +15,8 @@
 
       ../../modules/desktop/niri.nix
       ../../modules/desktop/noctalia.nix
-      
+      ../../modules/desktop/login.nix
+
       ../../modules/networking/amneziawg.nix
 
       ../../modules/hardware/fonts.nix
@@ -66,21 +67,25 @@
   users.users."mrgnl" = {
     isNormalUser = true;
     description = "mrgnl";
-    extraGroups = [ "networkmanager" "wheel" ];
-    shell =  pkgs.fish;
+    extraGroups = [
+      "audio"
+      "input"
+      "networkmanager"
+      "video"
+      "wheel"
+    ];
+    shell = pkgs.fish;
   };
 
-programs.fish.enable = true;
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
 
-services.upower.enable = true;
+  security.polkit.enable = true;
 
-nix.settings.experimental-features = [
-   "nix-command"
-   "flakes"
-];
-
-#services.displayManager.gdm. enable = true;
-#services.xserver.enable = true;
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -88,8 +93,8 @@ nix.settings.experimental-features = [
   # List packages installed in system profile. To search, run:
   # $ nix search wget
 
-hardware.bluetooth.enable = true;
-hardware.bluetooth.powerOnBoot = true;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
