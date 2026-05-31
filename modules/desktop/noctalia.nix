@@ -1,15 +1,14 @@
-{ pkgs, inputs, ... }:
+{ pkgs, lib, inputs, ... }:
 
 let
   system = pkgs.stdenv.hostPlatform.system;
+  noctaliaPackage = inputs.noctalia.packages.${system}.default;
 in
 {
   environment.systemPackages = with pkgs; [
-    inputs.noctalia.packages.${system}.default
+    noctaliaPackage
 
     jq
-    git
-    python3
     imagemagick
 
     brightnessctl
@@ -17,13 +16,17 @@ in
     wlsunset
   ];
 
-  networking.networkmanager.enable = true;
+  systemd.user.services.noctalia-shell = {
+    description = "Noctalia shell";
+    wantedBy = [ "niri.service" ];
+    bindsTo = [ "niri.service" ];
+    partOf = [ "niri.service" ];
+    after = [ "niri.service" ];
 
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-
-  services.upower.enable = true;
-  services.power-profiles-daemon.enable = true;
-
-  xdg.portal.enable = true;
+    serviceConfig = {
+      ExecStart = lib.getExe noctaliaPackage;
+      Restart = "on-failure";
+      RestartSec = 2;
+    };
+  };
 }
