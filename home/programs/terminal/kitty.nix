@@ -1,7 +1,7 @@
 { ... }:
 
 let
-  colors = import ../common/colors.nix;
+  colors = import ../../common/colors.nix;
 in
 {
   programs.kitty = {

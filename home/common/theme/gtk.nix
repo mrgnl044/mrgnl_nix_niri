@@ -1,12 +1,6 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    capitaine-cursors
-    gruvbox-gtk-theme
-    gruvbox-plus-icons
-  ];
-
   gtk = {
     enable = true;
 
@@ -33,12 +27,5 @@
 
     gtk3.extraConfig.gtk-application-prefer-dark-theme = true;
     gtk4.extraConfig.gtk-application-prefer-dark-theme = true;
-  };
-
-  dconf.settings."org/gnome/desktop/interface" = {
-    color-scheme = "prefer-dark";
-    cursor-theme = "capitaine-cursors";
-    gtk-theme = "Gruvbox-Dark-BL";
-    icon-theme = "Gruvbox-Plus-Dark";
   };
 }
