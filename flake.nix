@@ -12,7 +12,7 @@
   };
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
 
     nixos_hardware = {
       url = "github:NixOS/nixos-hardware/master";
@@ -40,12 +40,23 @@
       ...
     }:
     let
+      system = "x86_64-linux";
       mkHost = import ./lib/mk-host.nix { inherit home-manager inputs nixpkgs; };
+
+      hostModules = {
+        t14 = [
+          ./host/t14/configuration.nix
+          nixos_hardware.nixosModules.lenovo-thinkpad
+        ];
+
+        i5-5060 = [
+          ./host/i5-5060/configuration.nix
+        ];
+      };
     in
     {
-      nixosConfigurations.t14 = mkHost [
-        ./host/t14/configuration.nix
-        nixos_hardware.nixosModules.lenovo-thinkpad
-      ];
+      formatter.${system} = nixpkgs.legacyPackages.${system}.nixfmt-tree;
+
+      nixosConfigurations = builtins.mapAttrs (_: modules: mkHost modules) hostModules;
     };
 }

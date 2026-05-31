@@ -1,8 +1,8 @@
-{ ... }:
+{ lib, ... }:
 
 {
   networking = {
-    hostName = "nixos";
+    hostName = lib.mkDefault "nixos";
     networkmanager.enable = true;
   };
 }

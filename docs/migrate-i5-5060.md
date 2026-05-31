@@ -29,15 +29,17 @@ sudo cp /mnt/etc/nixos/hardware-configuration.nix /mnt/etc/nixos/host/i5-5060/ha
 
 Copy this repository to `/mnt/etc/nixos`, keeping `host/i5-5060/hardware-configuration.nix`.
 
-## 3. Enable the new host in `flake.nix`
+## 3. Check the new host in `flake.nix`
 
-Add the host next to `t14`:
+The host is already defined as:
 
 ```nix
 nixosConfigurations.i5-5060 = mkHost [
   ./host/i5-5060/configuration.nix
 ];
 ```
+
+The host evaluates without a generated hardware file by using a temporary tmpfs root fallback. Real installation still requires `host/i5-5060/hardware-configuration.nix`; do not switch the new machine without generating it.
 
 ## 4. Start VPN before the first full switch
 

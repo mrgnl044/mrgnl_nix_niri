@@ -3,6 +3,7 @@
 Run these before switching or committing:
 
 ```sh
+nix fmt -- --ci
 nix flake check --no-build --no-write-lock-file --accept-flake-config
 nixos-rebuild dry-build --flake /etc/nixos#t14 --accept-flake-config
 niri validate -c ~/.config/niri/config.kdl

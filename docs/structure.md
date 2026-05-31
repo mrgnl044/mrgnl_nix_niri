@@ -1,6 +1,7 @@
 # Configuration structure
 
-- `flake.nix` wires hosts through `lib/mk-host.nix` and attaches Home Manager once.
+- `flake.nix` defines the shared host registry, formatter, and generated `nixosConfigurations`.
+- `lib/mk-host.nix` attaches Home Manager once for every host.
 - `host/<name>/configuration.nix` keeps only machine-specific imports and identity.
 - `modules/profiles` groups reusable system layers.
 - `modules/core` contains boot, Nix, locale, networking, and security basics.
