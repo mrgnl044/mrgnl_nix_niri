@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../modules/packages.nix
+      ../../modules/niri.nix
     ];
 
   # Bootloader.
@@ -68,8 +69,6 @@ nix.settings.experimental-features = [
    "nix-command"
    "flakes"
 ];
-
-programs.niri.enable = true;
 
 #services.displayManager.gdm. enable = true;
 #services.xserver.enable = true;

@@ -36,5 +36,8 @@
 
     pciutils
     usbutils
+
+    waybar
+    fuzzel
   ];
 }
