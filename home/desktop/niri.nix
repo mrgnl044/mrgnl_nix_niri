@@ -1,9 +1,55 @@
-{ ... }:
+{ config, lib, ... }:
 
 let
   colors = import ../common/colors.nix;
 in
 {
+  home.activation.ensureWritableNoctaliaNiriConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    target="${config.xdg.configHome}/niri/noctalia.kdl"
+
+    if [ -L "$target" ] || [ ! -e "$target" ]; then
+      rm -f "$target"
+      mkdir -p "$(dirname "$target")"
+      cat > "$target" <<'EOF'
+    layout {
+        focus-ring {
+            active-color "${colors.green}"
+            inactive-color "${colors.bg}"
+            urgent-color "${colors.red}"
+        }
+
+        border {
+            active-color "${colors.green}"
+            inactive-color "${colors.bg}"
+            urgent-color "${colors.red}"
+        }
+
+        shadow {
+            color "#28282870"
+        }
+
+        tab-indicator {
+            active-color "${colors.green}"
+            inactive-color "#444507"
+            urgent-color "${colors.red}"
+        }
+
+        insert-hint {
+            color "#b8bb2680"
+        }
+    }
+
+    recent-windows {
+        highlight {
+            active-color "${colors.green}"
+            urgent-color "${colors.red}"
+        }
+    }
+EOF
+      chmod 0644 "$target"
+    fi
+  '';
+
   xdg.configFile = {
     "niri/config.kdl".text = ''
       include "./cfg/animation.kdl"
@@ -253,41 +299,5 @@ in
       }
     '';
 
-    "niri/noctalia.kdl".text = ''
-      layout {
-          focus-ring {
-              active-color "${colors.green}"
-              inactive-color "${colors.bg}"
-              urgent-color "${colors.red}"
-          }
-
-          border {
-              active-color "${colors.green}"
-              inactive-color "${colors.bg}"
-              urgent-color "${colors.red}"
-          }
-
-          shadow {
-              color "#28282870"
-          }
-
-          tab-indicator {
-              active-color "${colors.green}"
-              inactive-color "#444507"
-              urgent-color "${colors.red}"
-          }
-
-          insert-hint {
-              color "#b8bb2680"
-          }
-      }
-
-      recent-windows {
-          highlight {
-              active-color "${colors.green}"
-              urgent-color "${colors.red}"
-          }
-      }
-    '';
   };
 }
