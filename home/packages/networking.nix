@@ -4,7 +4,6 @@
   home.packages = with pkgs; [
     doggo
     dnsutils
-    httpie
     inetutils
     mtr
     nmap

@@ -6,7 +6,6 @@
     gh
     hyperfine
     lazydocker
-    neovim
     sd
     yq-go
   ];
