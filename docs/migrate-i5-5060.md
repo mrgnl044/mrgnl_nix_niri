@@ -1,6 +1,6 @@
 # Migrate to Intel i5 + RTX 5060
 
-Goal: boot the new machine, bring up VPN first, then switch the full desktop system.
+Goal: during installation on the new machine, bring up VPN first, verify it works, then switch the full desktop system. The installed desktop does not block login on VPN.
 
 ## 1. Prepare secrets
 
@@ -39,9 +39,9 @@ nixosConfigurations.i5-5060 = mkHost [
 ];
 ```
 
-## 4. Test VPN before the full desktop
+## 4. Start VPN before the first full switch
 
-Boot or chroot into the installed system, then check VPN first:
+Before running the final `nixos-rebuild switch`, start and check VPN manually:
 
 ```sh
 sudo systemctl start wg-quick-awg0.service
@@ -49,7 +49,7 @@ systemctl status wg-quick-awg0.service
 ip addr show awg0
 ```
 
-Only continue when `awg0` exists and the service is active.
+Only continue when `awg0` exists and the service is active. If it fails, fix `/etc/amnezia/awg0.conf` first.
 
 ## 5. Build before switching
 
@@ -64,7 +64,7 @@ sudo nixos-rebuild dry-build --flake .#i5-5060 --accept-flake-config
 sudo nixos-rebuild switch --flake .#i5-5060 --accept-flake-config
 ```
 
-The config makes `greetd` require `wg-quick-awg0.service`, so the login screen waits for VPN. If the VPN config is missing or broken, fix `/etc/amnezia/awg0.conf` first.
+After the switch, `awg0` is configured to autostart. The login screen is not tied to VPN, so a broken VPN config will not lock you out of the graphical session.
 
 ## 7. NVIDIA notes
 
