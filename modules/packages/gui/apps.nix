@@ -6,5 +6,6 @@
     loupe
     nautilus
     papers
+    telegram-desktop
   ];
 }
