@@ -3,7 +3,7 @@
 {
   imports = [
     ./common/theme.nix
-    ./desktop/niri.nix
+    ./desktop/niri
     ./desktop/noctalia.nix
     ./programs/shell.nix
     ./programs/terminal.nix

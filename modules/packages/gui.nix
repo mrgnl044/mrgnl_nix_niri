@@ -2,7 +2,6 @@
 
 {
   environment.systemPackages = with pkgs; [
-    kitty
     firefox
 
     fuzzel
@@ -17,10 +16,6 @@
     walker
     loupe
     papers
-
-    papirus-icon-theme
-    adwaita-icon-theme
-    bibata-cursors
   ];
 
   environment.variables = {
