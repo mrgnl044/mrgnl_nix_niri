@@ -1,18 +1,9 @@
 { ... }:
 
 let
-  colors = import ../common/colors.nix;
+  colors = import ../../common/colors.nix;
 in
 {
-  programs.yazi = {
-    enable = true;
-    enableFishIntegration = true;
-    theme.flavor = {
-      dark = "gruvbox-dark";
-      light = "gruvbox-dark";
-    };
-  };
-
   xdg.configFile."yazi/flavors/gruvbox-dark.yazi/flavor.toml".text = ''
     [manager]
     cwd = { fg = "${colors.yellow}", bold = true }

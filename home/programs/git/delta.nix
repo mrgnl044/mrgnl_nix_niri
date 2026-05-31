@@ -9,6 +9,4 @@
       side-by-side = true;
     };
   };
-
-  programs.git.enable = true;
 }

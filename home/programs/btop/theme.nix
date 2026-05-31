@@ -1,23 +1,9 @@
 { ... }:
 
 let
-  colors = import ../common/colors.nix;
+  colors = import ../../common/colors.nix;
 in
 {
-  programs.btop = {
-    enable = true;
-    settings = {
-      color_theme = "gruvbox-dark";
-      theme_background = true;
-      truecolor = true;
-      rounded_corners = true;
-      vim_keys = true;
-      graph_symbol = "braille";
-      shown_boxes = "cpu mem net proc";
-      update_ms = 1500;
-    };
-  };
-
   xdg.configFile."btop/themes/gruvbox-dark.theme".text = ''
     theme[main_bg]="${colors.bg}"
     theme[main_fg]="${colors.fg}"

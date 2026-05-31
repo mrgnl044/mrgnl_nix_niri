@@ -1,14 +1,9 @@
 { ... }:
 
 let
-  colors = import ../common/colors.nix;
+  colors = import ../../common/colors.nix;
 in
 {
-  programs.bat = {
-    enable = true;
-    config.theme = "gruvbox-dark";
-  };
-
   programs.fzf = {
     enable = true;
     enableFishIntegration = true;
@@ -25,10 +20,5 @@ in
       prompt = colors.yellow;
       spinner = colors.aqua;
     };
-  };
-
-  programs.zoxide = {
-    enable = true;
-    enableFishIntegration = true;
   };
 }
