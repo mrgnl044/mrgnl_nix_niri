@@ -3,12 +3,10 @@
 {
   environment.systemPackages = with pkgs; [
     fish
-    eza
     micro
     nano
 
     git
-    lazygit
     curl
     wget
     rsync
@@ -18,18 +16,20 @@
     dust
     procs
 
-    ripgrep
+    eza
     fd
     jq
+    ripgrep
 
-    unzip
+    file
+    man-pages
+    tree
+    which
+
     p7zip
+    unzip
     zip
     zstd
-    tree
-    file
-    which
-    man-pages
   ];
 
   programs.fish.enable = true;

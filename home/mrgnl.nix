@@ -5,9 +5,15 @@
     ./common/theme.nix
     ./desktop/niri
     ./desktop/noctalia.nix
+    ./programs/btop.nix
+    ./programs/dev.nix
+    ./programs/git.nix
+    ./programs/packages.nix
+    ./programs/search.nix
     ./programs/shell.nix
     ./programs/terminal.nix
-    ./programs/tools.nix
+    ./programs/tmux.nix
+    ./programs/yazi.nix
   ];
 
   home = {

@@ -1,0 +1,40 @@
+{ pkgs, ... }:
+
+{
+  home.packages = with pkgs; [
+    ast-grep
+    bottom
+    choose
+    dua
+    doggo
+    dnsutils
+    gh
+    glow
+    gdu
+    hyperfine
+    httpie
+    inetutils
+    jc
+    jless
+    lazydocker
+    lm_sensors
+    lsof
+    mdcat
+    mtr
+    ncdu
+    neovim
+    nmap
+    ouch
+    powertop
+    ripgrep-all
+    sd
+    smartmontools
+    socat
+    tealdeer
+    tmux
+    traceroute
+    whois
+    xh
+    yq-go
+  ];
+}
