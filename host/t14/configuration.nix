@@ -17,6 +17,8 @@
       ../../modules/desktop/noctalia.nix
       
       ../../modules/networking/amneziawg.nix
+
+      ../../modules/hardware/fonts.nix
     ];
 
   # Bootloader.
