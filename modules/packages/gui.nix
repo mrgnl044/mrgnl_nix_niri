@@ -14,5 +14,7 @@
     wl-clipboard
     grim
     slurp
+    nautilus
+    walker
   ];
 }
