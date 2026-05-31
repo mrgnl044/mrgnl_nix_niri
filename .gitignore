@@ -1,0 +1,16 @@
+# Secrets
+*.age
+*.key
+*.pem
+*.secret
+
+# VPN
+/etc/amnezia
+amnezia/
+vpn/
+
+# Local backups
+config-snapshots/
+
+# Hardware dumps
+hardware-configuration-generated.nix

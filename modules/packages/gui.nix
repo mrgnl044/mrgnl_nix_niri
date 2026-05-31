@@ -16,5 +16,8 @@
     slurp
     nautilus
     walker
+
+    papirus-icon-theme
+    adwaita-icon-theme
   ];
 }
