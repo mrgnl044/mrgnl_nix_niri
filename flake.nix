@@ -19,24 +19,47 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    home-manager = {
+      url = "github:nix-community/home-manager/release-26.05";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixos_hardware, noctalia, ... }: {
-    nixosConfigurations.t14 = nixpkgs.lib.nixosSystem {
-      system = "x86_64-linux";
+  outputs =
+    inputs@{
+      self,
+      nixpkgs,
+      nixos_hardware,
+      home-manager,
+      noctalia,
+      ...
+    }:
+    {
+      nixosConfigurations.t14 = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
 
-      specialArgs = {
-        inherit inputs;
+        specialArgs = {
+          inherit inputs;
+        };
+
+        modules = [
+          ./host/t14/configuration.nix
+          nixos_hardware.nixosModules.lenovo-thinkpad
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "hm-backup";
+              users.mrgnl = import ./home/mrgnl.nix;
+            };
+          }
+        ];
       };
-
-      modules = [
-        ./host/t14/configuration.nix
-        nixos_hardware.nixosModules.lenovo-thinkpad
-      ];
     };
-  };
 }
