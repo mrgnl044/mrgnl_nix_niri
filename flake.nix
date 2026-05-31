@@ -1,17 +1,16 @@
-{
-	description = "mrgnl NixOs config";
+inputs = {
+  nixpkgs.url = "github:NixOS/nixpkgs/nixos-26.05";
+  nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+};
 
-	inputs = {
-		nixpkgs.url = "github:NixOs/nixpkgs/nixos-26.05";
-	};
+outputs = { self, nixpkgs, nixos-hardware, ... }: {
+  nixosConfigurations.t14 = nixpkgs.lib.nixosSystem {
+    system = "x86_64-linux";
 
-	outputs = { self, nixpkgs, ... }: {
-		nixosConfigurations.t14 = nixpkgs.lib.nixosSystem {
-			system = "x86_64-linux";
+    modules = [
+      nixos-hardware.nixosModules.lenovo-thinkpad
 
-			modules = [
-				./host/t14/configuration.nix
-			];
-		};
-	};
-}
+      ./host/t14/configuration.nix
+    ];
+  };
+};

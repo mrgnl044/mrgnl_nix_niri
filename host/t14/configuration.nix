@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../../modules/packages.nix
     ];
 
   # Bootloader.
@@ -78,48 +79,6 @@ programs.niri.enable = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-
-    fish
-    kitty
-    firefox
-
-    lsd
-    bat
-    zoxide
-    micro
-    yazi
-
-    git
-    curl
-
-    fastfetch
-    btop
-
-    ripgrep
-    fd
-    jq
-
-    unzip
-    p7zip
-
-    wl-clipboard
-    grim
-    slurp
-
-    pciutils
-    usbutils
-
-    fuzzel
-    waybar
-    swaylock
-    swayidle
-
-    brightnessctl
-  ];
-
 
 hardware.bluetooth.enable = true;
 hardware.bluetooth.powerOnBoot = true;
