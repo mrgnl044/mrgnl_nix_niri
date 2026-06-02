@@ -4,7 +4,7 @@ Personal NixOS flake for a Gruvbox-dark Wayland desktop built around Niri,
 Noctalia, Home Manager, and a terminal-first workflow.
 
 The repository is structured for more than one machine. The current host is
-`t14`; `i5-5060` is prepared as a future Intel i5 + NVIDIA RTX 5060 desktop
+`t14`; `i5-5060` is prepared as a future Intel i5 + NVIDIA RTX desktop
 profile.
 
 ## Screenshots
@@ -110,6 +110,3 @@ Use the migration guide:
 
 [docs/migrate-i5-5060.md](docs/migrate-i5-5060.md)
 
-The important rule for the new machine: copy VPN secrets manually, start and
-verify VPN once during installation, generate real hardware config, then switch
-the `i5-5060` host.
