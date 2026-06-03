@@ -7,5 +7,6 @@
     nautilus
     papers
     telegram-desktop
+    transmission_4-gtk
   ];
 }
