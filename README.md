@@ -78,6 +78,7 @@ More detail:
 
 - [docs/structure.md](docs/structure.md)
 - [docs/checks.md](docs/checks.md)
+- [docs/aliases.md](docs/aliases.md)
 - [docs/install-current.md](docs/install-current.md)
 - [docs/manage-config.md](docs/manage-config.md)
 - [docs/migrate-i5-5060.md](docs/migrate-i5-5060.md)
