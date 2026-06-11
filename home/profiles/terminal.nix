@@ -5,6 +5,7 @@
     ../packages
     ../programs/btop
     ../programs/dev
+    ../programs/fastfetch
     ../programs/git
     ../programs/search
     ../programs/shell/fish.nix
