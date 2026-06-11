@@ -6,7 +6,7 @@ Each directory owns one program family.
 - `dev` is development shell integration.
 - `fastfetch` is the compact Gruvbox system summary.
 - `git` is Git and delta.
-- `kdeconnect` hides unstable Qt/QML launchers while keeping device integration.
+- `kdeconnect` provides stable phone file transfer, browsing, and MIME handling.
 - `search` is navigation and fuzzy/search helpers.
 - `shell` is fish and starship.
 - `terminal` is kitty and tmux.
