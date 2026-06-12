@@ -11,5 +11,6 @@
     ../../modules/networking/amneziawg.nix
   ];
 
+  networking.hostName = "t14";
   system.stateVersion = "26.05";
 }

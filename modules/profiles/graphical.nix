@@ -6,6 +6,5 @@
 
     ../desktop/login.nix
     ../desktop/niri.nix
-    ../desktop/noctalia.nix
   ];
 }

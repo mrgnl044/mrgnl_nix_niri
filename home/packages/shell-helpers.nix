@@ -8,6 +8,5 @@
     ouch
     ripgrep-all
     tealdeer
-    tmux
   ];
 }

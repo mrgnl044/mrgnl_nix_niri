@@ -9,7 +9,7 @@
         Mod+D hotkey-overlay-title="Open Launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
         Mod+B hotkey-overlay-title="Open Browser" { spawn "firefox"; }
         Mod+E hotkey-overlay-title="Open Files" { spawn "nautilus"; }
-        Mod+V hotkey-overlay-title="Clipboard History" { spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
+        Mod+V hotkey-overlay-title="Clipboard History" { spawn-sh "noctalia msg panel-toggle clipboard"; }
         Mod+Alt+L hotkey-overlay-title="Lock Screen" { spawn-sh "noctalia msg session lock"; }
         Mod+Shift+Q hotkey-overlay-title="Session Menu" { spawn-sh "noctalia msg panel-toggle session"; }
 

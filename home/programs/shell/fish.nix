@@ -1,7 +1,8 @@
-{ ... }:
+{ osConfig, ... }:
 
 let
   colors = import ../../common/colors.nix;
+  hostName = osConfig.networking.hostName;
 in
 {
   programs.fish = {
@@ -14,7 +15,7 @@ in
       la = "eza -lah --group-directories-first --icons=auto";
       ll = "eza -lh --group-directories-first --icons=auto";
       ls = "eza --group-directories-first --icons=auto";
-      rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#t14";
+      rebuild = "sudo nixos-rebuild switch --flake /etc/nixos#${hostName} --accept-flake-config";
       tree = "eza --tree --group-directories-first --icons=auto";
     };
     interactiveShellInit = ''

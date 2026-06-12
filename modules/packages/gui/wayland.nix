@@ -2,11 +2,8 @@
 
 {
   environment.systemPackages = with pkgs; [
-    fuzzel
     grim
     slurp
-    walker
-    wl-clipboard
   ];
 
   environment.variables = {

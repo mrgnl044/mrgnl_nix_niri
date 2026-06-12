@@ -12,5 +12,8 @@ vpn/
 # Local backups
 config-snapshots/
 
+# Local documentation and personal notes
+*.md
+
 # Hardware dumps
 hardware-configuration-generated.nix

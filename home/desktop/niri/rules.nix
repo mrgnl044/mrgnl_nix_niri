@@ -42,7 +42,7 @@
     }
 
     layer-rule {
-        match namespace="^noctalia-wallpaper*"
+        match namespace="^noctalia-wallpaper$"
         place-within-backdrop true
     }
 

@@ -6,7 +6,6 @@
     eza
     fd
     file
-    fish
     git
     jq
     man-pages
@@ -14,7 +13,6 @@
     nano
     ripgrep
     rsync
-    tree
     wget
     which
   ];
