@@ -14,6 +14,7 @@ config-snapshots/
 
 # Local documentation and personal notes
 *.md
+!/README.md
 
 # Hardware dumps
 hardware-configuration-generated.nix

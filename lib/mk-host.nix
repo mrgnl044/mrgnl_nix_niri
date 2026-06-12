@@ -1,17 +1,12 @@
 {
   home-manager,
-  inputs,
   nixpkgs,
-  ...
+  noctalia,
 }:
 
 modules:
 nixpkgs.lib.nixosSystem {
   system = "x86_64-linux";
-
-  specialArgs = {
-    inherit inputs;
-  };
 
   modules = modules ++ [
     home-manager.nixosModules.home-manager
@@ -20,7 +15,7 @@ nixpkgs.lib.nixosSystem {
         useGlobalPkgs = true;
         useUserPackages = true;
         backupFileExtension = "hm-backup";
-        sharedModules = [ inputs.noctalia.homeModules.default ];
+        sharedModules = [ noctalia.homeModules.default ];
         users.mrgnl = import ../home/mrgnl.nix;
       };
     }

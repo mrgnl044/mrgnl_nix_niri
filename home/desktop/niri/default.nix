@@ -29,46 +29,43 @@ in
     include "./noctalia.kdl"
   '';
 
-  xdg.configFile."niri/noctalia.kdl" = {
-    force = true;
-    text = ''
-      layout {
-          focus-ring {
-              width 2
-              active-color "${colors.green}"
-              inactive-color "${colors.bg}"
-              urgent-color "${colors.red}"
-          }
+  xdg.configFile."niri/noctalia.kdl".text = ''
+    layout {
+        focus-ring {
+            width 2
+            active-color "${colors.green}"
+            inactive-color "${colors.bg}"
+            urgent-color "${colors.red}"
+        }
 
-          border {
-              off
-              width 2
-              active-color "${colors.green}"
-              inactive-color "${colors.bg}"
-              urgent-color "${colors.red}"
-          }
+        border {
+            off
+            width 2
+            active-color "${colors.green}"
+            inactive-color "${colors.bg}"
+            urgent-color "${colors.red}"
+        }
 
-          shadow {
-              color "#28282870"
-          }
+        shadow {
+            color "#28282870"
+        }
 
-          tab-indicator {
-              active-color "${colors.green}"
-              inactive-color "#444507"
-              urgent-color "${colors.red}"
-          }
+        tab-indicator {
+            active-color "${colors.green}"
+            inactive-color "#444507"
+            urgent-color "${colors.red}"
+        }
 
-          insert-hint {
-              color "#b8bb2680"
-          }
-      }
+        insert-hint {
+            color "#b8bb2680"
+        }
+    }
 
-      recent-windows {
-          highlight {
-              active-color "${colors.green}"
-              urgent-color "${colors.red}"
-          }
-      }
-    '';
-  };
+    recent-windows {
+        highlight {
+            active-color "${colors.green}"
+            urgent-color "${colors.red}"
+        }
+    }
+  '';
 }

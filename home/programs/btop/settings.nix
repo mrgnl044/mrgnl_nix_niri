@@ -14,6 +14,4 @@
       update_ms = 1500;
     };
   };
-
-  xdg.configFile."btop/btop.conf".force = true;
 }

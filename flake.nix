@@ -31,7 +31,6 @@
 
   outputs =
     inputs@{
-      self,
       nixpkgs,
       nixos_hardware,
       home-manager,
@@ -40,7 +39,9 @@
     }:
     let
       system = "x86_64-linux";
-      mkHost = import ./lib/mk-host.nix { inherit home-manager inputs nixpkgs; };
+      mkHost = import ./lib/mk-host.nix {
+        inherit home-manager nixpkgs noctalia;
+      };
 
       hostModules = {
         t14 = [
