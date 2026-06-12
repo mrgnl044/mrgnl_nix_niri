@@ -7,6 +7,7 @@
     ../programs/dev
     ../programs/fastfetch
     ../programs/git
+    ../programs/neovim
     ../programs/search
     ../programs/shell/fish.nix
     ../programs/shell/starship.nix

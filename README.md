@@ -21,7 +21,7 @@ requires a real generated `host/i5-5060/hardware-configuration.nix`.
 | Desktop | Niri, greetd/tuigreet, Noctalia 5, Xwayland Satellite |
 | Theme | Gruvbox Dark, Inter, JetBrains Mono Nerd Font |
 | Terminal | Kitty, Fish, Starship, tmux |
-| CLI | Neovim, Micro, Yazi, btop, Git/Delta, fzf, zoxide |
+| CLI | LazyVim, Yazi, btop, Git/Delta, fzf, zoxide |
 | GUI | Firefox, Nautilus, Telegram, Spotify, Obsidian, Transmission |
 | Network | NetworkManager and declarative AmneziaWG wiring |
 
@@ -77,6 +77,13 @@ rebuild
 ```
 
 Never switch `i5-5060` on the ThinkPad.
+
+## Editor
+
+LazyVim is the default editor for terminal commands, Git-compatible tools,
+Yazi, `vi`, `vim`, `vimdiff`, and common text-file MIME types. The first
+`nvim` launch requires network access while Lazy.nvim downloads the plugin
+set. Run `:LazyHealth` after the initial installation.
 
 After activation:
 

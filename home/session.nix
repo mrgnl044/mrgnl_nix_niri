@@ -8,9 +8,7 @@
 
     sessionVariables = {
       BROWSER = "firefox";
-      EDITOR = "micro";
       TERMINAL = "kitty";
-      VISUAL = "micro";
     };
   };
 }
