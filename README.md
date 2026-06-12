@@ -22,7 +22,7 @@ requires a real generated `host/i5-5060/hardware-configuration.nix`.
 | Theme | Gruvbox Dark, Inter, JetBrains Mono Nerd Font |
 | Terminal | Kitty, Fish, Starship, tmux |
 | CLI | LazyVim, Yazi, btop, Git/Delta, fzf, zoxide |
-| GUI | Firefox, Nautilus, Telegram, Spotify, Obsidian, Transmission |
+| GUI | Firefox, Nautilus, Steam, Telegram, Spotify, Obsidian, Transmission |
 | Network | NetworkManager and declarative AmneziaWG wiring |
 
 ## Layout
