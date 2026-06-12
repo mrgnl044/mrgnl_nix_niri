@@ -7,5 +7,9 @@
         output "eDP-1" {
             scale 1
         }
+
+        output "Xiaomi Corporation Mi monitor 7094010014627" {
+            mode "3440x1440"
+        }
       '';
 }
