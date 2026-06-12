@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ ... }:
 
 let
   colors = import ../../common/colors.nix;
@@ -8,6 +8,7 @@ in
     ./animation.nix
     ./autostart.nix
     ./display.nix
+    ./effects.nix
     ./input.nix
     ./keybinds.nix
     ./layout.nix
@@ -21,27 +22,27 @@ in
     include "./cfg/keybinds.kdl"
     include "./cfg/input.kdl"
     include "./cfg/display.kdl"
+    include "./cfg/effects.kdl"
     include "./cfg/layout.kdl"
     include "./cfg/rules.kdl"
     include "./cfg/misc.kdl"
     include "./noctalia.kdl"
   '';
 
-  home.activation.ensureWritableNoctaliaNiriConfig = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-        target="${config.xdg.configHome}/niri/noctalia.kdl"
-
-        if [ -L "$target" ] || [ ! -e "$target" ]; then
-          rm -f "$target"
-          mkdir -p "$(dirname "$target")"
-          cat > "$target" <<'EOF'
+  xdg.configFile."niri/noctalia.kdl" = {
+    force = true;
+    text = ''
       layout {
           focus-ring {
+              width 2
               active-color "${colors.green}"
               inactive-color "${colors.bg}"
               urgent-color "${colors.red}"
           }
 
           border {
+              off
+              width 2
               active-color "${colors.green}"
               inactive-color "${colors.bg}"
               urgent-color "${colors.red}"
@@ -68,8 +69,6 @@ in
               urgent-color "${colors.red}"
           }
       }
-    EOF
-          chmod 0644 "$target"
-        fi
-  '';
+    '';
+  };
 }

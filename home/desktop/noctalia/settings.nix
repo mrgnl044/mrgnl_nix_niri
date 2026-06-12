@@ -10,6 +10,7 @@
     settings = {
       shell = {
         font_family = "JetBrainsMono Nerd Font";
+        panel.transparency_mode = "glass";
         polkit_agent = true;
         settings_show_advanced = true;
         telemetry_enabled = false;
@@ -31,9 +32,14 @@
       lockscreen.enabled = true;
 
       notification = {
+        background_opacity = 0.9;
         enable_daemon = true;
         layer = "top";
       };
+
+      osd.background_opacity = 0.9;
+
+      bar.main.background_opacity = 0.86;
     };
   };
 }

@@ -42,7 +42,7 @@ in
       enable_audio_bell = false;
       confirm_os_window_close = 0;
       cursor_shape = "beam";
-      background_opacity = "0.96";
+      background_opacity = "0.90";
       window_padding_width = 8;
       tab_bar_edge = "top";
       tab_bar_style = "powerline";

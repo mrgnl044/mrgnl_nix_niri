@@ -5,6 +5,21 @@
     window-rule {
         geometry-corner-radius 8
         clip-to-geometry true
+
+        background-effect {
+            blur true
+            xray false
+        }
+    }
+
+    window-rule {
+        match app-id=r#"(?i)^(obsidian|spotify|transmission-gtk)$"#
+        opacity 0.94
+    }
+
+    window-rule {
+        match app-id="^org\\.gnome\\.Nautilus$"
+        opacity 0.96
     }
 
     window-rule {
@@ -29,6 +44,14 @@
     layer-rule {
         match namespace="^noctalia-wallpaper*"
         place-within-backdrop true
+    }
+
+    layer-rule {
+        match namespace=r#"^noctalia-(bar-[^"]+|notification|dock|panel|attached-panel|osd)$"#
+
+        background-effect {
+            xray false
+        }
     }
   '';
 }
