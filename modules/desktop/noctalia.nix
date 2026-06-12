@@ -1,18 +1,7 @@
-{
-  pkgs,
-  lib,
-  inputs,
-  ...
-}:
+{ pkgs, ... }:
 
-let
-  system = pkgs.stdenv.hostPlatform.system;
-  noctaliaPackage = inputs.noctalia.packages.${system}.default;
-in
 {
   environment.systemPackages = with pkgs; [
-    noctaliaPackage
-
     jq
     imagemagick
 

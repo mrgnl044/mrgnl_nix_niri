@@ -8,6 +8,13 @@
     }
 
     window-rule {
+        match app-id="dev.noctalia.Noctalia.Settings"
+        open-floating true
+        default-column-width { fixed 1080; }
+        default-window-height { fixed 920; }
+    }
+
+    window-rule {
         match app-id="steam"
         exclude title=r#"^[Ss]team$"#
         open-floating true

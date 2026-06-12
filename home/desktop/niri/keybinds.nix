@@ -6,12 +6,12 @@
         Mod+Shift+Escape { show-hotkey-overlay; }
 
         Mod+Return hotkey-overlay-title="Open Terminal" { spawn "kitty"; }
-        Mod+D hotkey-overlay-title="Open Launcher" { spawn-sh "noctalia-shell ipc call launcher toggle"; }
+        Mod+D hotkey-overlay-title="Open Launcher" { spawn-sh "noctalia msg panel-toggle launcher"; }
         Mod+B hotkey-overlay-title="Open Browser" { spawn "firefox"; }
         Mod+E hotkey-overlay-title="Open Files" { spawn "nautilus"; }
         Mod+V hotkey-overlay-title="Clipboard History" { spawn-sh "cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"; }
-        Mod+Alt+L hotkey-overlay-title="Lock Screen" { spawn-sh "noctalia-shell ipc call lockScreen lock"; }
-        Mod+Shift+Q hotkey-overlay-title="Session Menu" { spawn-sh "noctalia-shell ipc call sessionMenu toggle"; }
+        Mod+Alt+L hotkey-overlay-title="Lock Screen" { spawn-sh "noctalia msg session lock"; }
+        Mod+Shift+Q hotkey-overlay-title="Session Menu" { spawn-sh "noctalia msg panel-toggle session"; }
 
         XF86AudioRaiseVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%+"; }
         XF86AudioLowerVolume allow-when-locked=true { spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "5%-"; }

@@ -20,6 +20,7 @@ nixpkgs.lib.nixosSystem {
         useGlobalPkgs = true;
         useUserPackages = true;
         backupFileExtension = "hm-backup";
+        sharedModules = [ inputs.noctalia.homeModules.default ];
         users.mrgnl = import ../home/mrgnl.nix;
       };
     }
