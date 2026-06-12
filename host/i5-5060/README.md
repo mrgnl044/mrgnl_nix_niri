@@ -1,18 +1,30 @@
 # i5-5060 host
 
-This host is a migration template for an Intel i5 desktop with an NVIDIA RTX 5060.
+Migration target for an Intel desktop with an NVIDIA RTX 5060.
 
-Before enabling it in `flake.nix`:
+The host is already registered in `flake.nix` and can be evaluated or built.
+Until real hardware configuration exists, it uses a temporary tmpfs root only
+to keep cross-host checks possible.
 
-1. Boot the new machine from the NixOS installer.
-2. Mount the target system under `/mnt`.
-3. Generate hardware config:
+Before installation on the new machine:
+
+1. Mount the target system under `/mnt`.
+2. Generate hardware configuration:
 
    ```sh
-   nixos-generate-config --root /mnt --show-hardware-config > /mnt/etc/nixos/host/i5-5060/hardware-configuration.nix
+   sudo nixos-generate-config --root /mnt
+   sudo mkdir -p /mnt/etc/nixos/host/i5-5060
+   sudo cp /mnt/etc/nixos/hardware-configuration.nix \
+     /mnt/etc/nixos/host/i5-5060/hardware-configuration.nix
    ```
 
-4. Add `nixosConfigurations.i5-5060 = mkHost [ ./host/i5-5060/configuration.nix ];` to `flake.nix`.
-5. Build once with `nixos-rebuild dry-build --flake /etc/nixos#i5-5060 --accept-flake-config`.
+3. Install `/etc/amnezia/awg0.conf` with root ownership and mode `0600`.
+4. Start and verify VPN.
+5. Build `.#i5-5060`.
+6. Switch only on the new desktop.
 
-The NVIDIA module uses the latest driver package and the open kernel module path suitable for modern RTX cards. If the new machine is hybrid graphics instead of a desktop dGPU setup, add PRIME bus IDs after checking `lspci`.
+The NVIDIA module enables the current NVIDIA package, open kernel modules,
+Wayland modesetting, and 32-bit graphics support. Add PRIME bus IDs only if the
+new machine is actually hybrid graphics.
+
+See [../../docs/migrate-i5-5060.md](../../docs/migrate-i5-5060.md).

@@ -221,7 +221,7 @@ cd /etc/nixos
 Проверить форматирование:
 
 ```sh
-nix fmt -- --ci
+nix fmt --accept-flake-config -- --ci
 ```
 
 Автоматически отформатировать:
@@ -233,7 +233,7 @@ nix fmt .
 Проверить все flake outputs:
 
 ```sh
-nix flake check --no-build --no-write-lock-file --accept-flake-config
+nix flake check --accept-flake-config
 ```
 
 Проверить сборку текущего компьютера без применения:
@@ -317,7 +317,8 @@ git commit -m "update terminal theme"
 Отправить изменения:
 
 ```sh
-git push -u origin main
+git push -u origin "$(git branch --show-current)"
+```
 ```
 
 Если push отклонён из-за удалённых изменений, сначала не используй force.

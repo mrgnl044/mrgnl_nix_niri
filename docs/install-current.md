@@ -11,7 +11,7 @@ cd /etc/nixos
 ## 2. Check formatting
 
 ```sh
-nix fmt -- --ci
+nix fmt --accept-flake-config -- --ci
 ```
 
 If it changes files, inspect the diff before committing.
@@ -19,7 +19,7 @@ If it changes files, inspect the diff before committing.
 ## 3. Check the flake
 
 ```sh
-nix flake check --no-build --no-write-lock-file --accept-flake-config
+nix flake check --accept-flake-config
 ```
 
 This evaluates all flake outputs, including `t14` and `i5-5060`.
@@ -58,5 +58,5 @@ managed in Home Manager. Do not wipe the whole `~/.config` directory.
 
 ```sh
 git status --short --branch
-git push -u origin main
+git push -u origin "$(git branch --show-current)"
 ```
