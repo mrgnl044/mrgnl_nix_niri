@@ -39,7 +39,7 @@
 
       osd.background_opacity = 0.9;
 
-      bar.main.background_opacity = 0.86;
+      bar.default.background_opacity = 0.86;
     };
   };
 }

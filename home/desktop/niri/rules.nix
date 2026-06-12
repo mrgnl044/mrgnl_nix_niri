@@ -8,7 +8,7 @@
 
         background-effect {
             blur true
-            xray false
+            xray true
         }
     }
 
@@ -50,7 +50,7 @@
         match namespace=r#"^noctalia-(bar-[^"]+|notification|dock|panel|attached-panel|osd)$"#
 
         background-effect {
-            xray false
+            xray true
         }
     }
   '';
