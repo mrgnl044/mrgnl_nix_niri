@@ -15,7 +15,7 @@
 This repository is the source of truth for my complete NixOS environment:
 system services, hardware profiles, desktop behavior, applications, terminal
 tools and dotfiles. The same modular configuration targets my current ThinkPad
-and two future Intel/NVIDIA desktops.
+and three future Intel/NVIDIA desktops.
 
 ## Highlights
 
@@ -25,7 +25,7 @@ and two future Intel/NVIDIA desktops.
 | **Consistent UI** | Gruvbox Dark | Shared colors across Noctalia, Niri, Kitty, btop, Yazi and LazyVim |
 | **Developer setup** | LazyVim everywhere | `nvim` is the default editor for the shell, Git tools, Yazi and common text MIME types |
 | **Gaming** | Steam + GameMode | 32-bit graphics support, performance mode and a Steam FHS wrapper that also works from `/etc/nixos` |
-| **Three hosts** | Intel + NVIDIA profiles | Active ThinkPad plus buildable RTX 4060 Ti 16 GB and RTX 5060 migration targets |
+| **Four hosts** | Intel + NVIDIA profiles | Active ThinkPad plus buildable RTX 4060 Ti 16 GB, RTX 4090 and RTX 5060 targets |
 | **Maintenance** | Automated cleanup | Weekly generation cleanup, Nix store optimisation and bounded journal storage |
 | **Validation** | Project checker | Parses every Nix file, validates Markdown, builds hosts and checks generated Niri/Noctalia configuration |
 | **Secrets** | Kept outside Git | AmneziaWG credentials remain root-owned under `/etc/amnezia/` |
@@ -78,14 +78,16 @@ and two future Intel/NVIDIA desktops.
 | --- | --- | --- |
 | `t14` | Active | Lenovo ThinkPad, Intel graphics, laptop power management |
 | `i5-4060ti` | Migration target | Intel i5, NVIDIA RTX 4060 Ti 16 GB, open NVIDIA kernel module |
+| `i5-4090` | Migration target | Intel i5, NVIDIA RTX 4090 24 GB, open NVIDIA kernel module |
 | `i5-5060` | Migration target | Intel i5, NVIDIA RTX 5060, open NVIDIA kernel module |
 
-Both desktop targets can be evaluated and fully built today, but they
+All desktop targets can be evaluated and fully built today, but they
 intentionally use a temporary root filesystem until each real machine
 generates its own hardware configuration:
 
 ```text
 host/i5-4060ti/hardware-configuration.nix
+host/i5-4090/hardware-configuration.nix
 host/i5-5060/hardware-configuration.nix
 ```
 
@@ -101,6 +103,7 @@ with the hardware configuration generated on that target PC.
 ├── host/
 │   ├── t14/                  active laptop hardware and composition
 │   ├── i5-4060ti/            RTX 4060 Ti 16 GB migration target
+│   ├── i5-4090/              RTX 4090 24 GB migration target
 │   └── i5-5060/              RTX 5060 migration target
 ├── modules/
 │   ├── core/                 boot, Nix, locale, networking, security
@@ -147,7 +150,7 @@ The checker:
 3. Evaluates all flake outputs.
 4. Dry-builds the selected host.
 5. Validates generated Niri and Noctalia configuration.
-6. Builds `t14`, `i5-4060ti` and `i5-5060` in full mode.
+6. Builds `t14`, `i5-4060ti`, `i5-4090` and `i5-5060` in full mode.
 7. Rejects patch whitespace errors.
 
 ## Apply
