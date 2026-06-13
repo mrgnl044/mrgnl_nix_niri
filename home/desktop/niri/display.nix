@@ -9,7 +9,7 @@
         }
 
         output "Xiaomi Corporation Mi monitor 7094010014627" {
-            mode "3440x1440"
+            mode "3440x1440@100.000"
         }
       '';
 }

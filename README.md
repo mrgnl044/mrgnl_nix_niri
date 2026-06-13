@@ -78,12 +78,7 @@ rebuild
 
 Never switch `i5-5060` on the ThinkPad.
 
-## Editor
-
-LazyVim is the default editor for terminal commands, Git-compatible tools,
-Yazi, `vi`, `vim`, `vimdiff`, and common text-file MIME types. The first
-`nvim` launch requires network access while Lazy.nvim downloads the plugin
-set. Run `:LazyHealth` after the initial installation.
+## Runtime Checks
 
 After activation:
 
@@ -94,6 +89,35 @@ systemctl status home-manager-mrgnl.service
 niri validate -c ~/.config/niri/config.kdl
 noctalia config validate ~/.config/noctalia
 ```
+
+## Editor
+
+LazyVim is the default editor for terminal commands, Git-compatible tools,
+Yazi, `vi`, `vim`, `vimdiff`, and common text-file MIME types. The first
+`nvim` launch requires network access while Lazy.nvim downloads the plugin
+set. Run `:LazyHealth` after the initial installation.
+
+## Gaming
+
+Steam and GameMode are enabled system-wide. The first Steam launch downloads
+and installs the current client before showing the sign-in window. Steam can
+also be started safely from terminals whose working directory is under
+`/etc`; the wrapper falls back to the user's home directory before entering
+its FHS environment.
+
+Use this launch option for games that should run through GameMode:
+
+```text
+gamemoderun %command%
+```
+
+After the first rebuild that enables GameMode, sign out and back in once so
+the `gamemode` group membership is present in the desktop session.
+
+The Xiaomi ultrawide is pinned to the maximum mode exposed by the current
+connection, `3440x1440@100.000`. The monitor does not currently advertise a
+180 Hz mode; reaching 180 Hz requires a cable, port, or adapter combination
+that exposes that mode in EDID.
 
 ## Maintenance
 

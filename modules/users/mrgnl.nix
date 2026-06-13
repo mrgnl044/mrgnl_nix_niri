@@ -7,6 +7,7 @@
     shell = pkgs.fish;
     extraGroups = [
       "audio"
+      "gamemode"
       "input"
       "networkmanager"
       "video"
