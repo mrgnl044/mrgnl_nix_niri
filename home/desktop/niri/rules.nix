@@ -23,6 +23,11 @@
     }
 
     window-rule {
+        match is-active=false
+        opacity 0.88
+    }
+
+    window-rule {
         match app-id="dev.noctalia.Noctalia.Settings"
         open-floating true
         default-column-width { fixed 1080; }
