@@ -2,7 +2,7 @@
 
 let
   colors = import ../../common/colors.nix;
-  showGpu = osConfig.networking.hostName == "i5-5060";
+  showGpu = osConfig.hardware.nvidia.enabled;
 in
 {
   programs.fastfetch = {

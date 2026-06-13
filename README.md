@@ -8,10 +8,10 @@ Home Manager and a Gruvbox-dark user environment.
 | Host | Status | Hardware |
 | --- | --- | --- |
 | `t14` | Active | Lenovo ThinkPad with Intel graphics |
-| `i5-5060` | Migration target | Intel desktop with NVIDIA RTX 5060 |
+| `i5-4060ti` | Migration target | Intel i5 desktop with NVIDIA RTX 4060 Ti 16 GB |
 
-`i5-5060` can be evaluated and built before migration, but installation
-requires a real generated `host/i5-5060/hardware-configuration.nix`.
+`i5-4060ti` can be evaluated and built before migration, but installation
+requires a real generated `host/i5-4060ti/hardware-configuration.nix`.
 
 ## Stack
 
@@ -76,7 +76,7 @@ The Fish alias selects the current hostname automatically:
 rebuild
 ```
 
-Never switch `i5-5060` on the ThinkPad.
+Never switch `i5-4060ti` on the ThinkPad.
 
 ## Runtime Checks
 

@@ -13,7 +13,7 @@ in
       ../../modules/networking/amneziawg.nix
     ];
 
-  networking.hostName = "i5-5060";
+  networking.hostName = "i5-4060ti";
   fileSystems."/" = lib.mkIf (!hasHardwareConfig) {
     device = "none";
     fsType = "tmpfs";

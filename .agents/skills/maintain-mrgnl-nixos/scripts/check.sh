@@ -75,8 +75,8 @@ if [[ "$mode" == "full" ]]; then
     --no-link \
     --accept-flake-config
 
-  echo "==> building i5-5060"
-  nix build .#nixosConfigurations.i5-5060.config.system.build.toplevel \
+  echo "==> building i5-4060ti"
+  nix build .#nixosConfigurations.i5-4060ti.config.system.build.toplevel \
     --no-link \
     --accept-flake-config
 fi
