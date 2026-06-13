@@ -1,4 +1,0 @@
-interface:
-  display_name: "Maintain mrgnl NixOS"
-  short_description: "Navigate and safely maintain this NixOS flake"
-  default_prompt: "Use $maintain-mrgnl-nixos to make a structured, validated change to this NixOS configuration."

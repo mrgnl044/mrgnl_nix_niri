@@ -115,7 +115,7 @@ with the hardware configuration generated on that target PC.
 │   ├── desktop/              generated Niri and Noctalia configuration
 │   ├── packages/             daily user tools grouped by task
 │   └── programs/             application-specific Home Manager modules
-└── .agents/skills/           project checker and maintenance instructions
+└── scripts/check.sh          project validation entrypoint
 ```
 
 The ownership rule is simple:
@@ -130,14 +130,14 @@ Run the quick checker for a normal change:
 
 ```sh
 cd /etc/nixos
-.agents/skills/maintain-mrgnl-nixos/scripts/check.sh quick t14
+scripts/check.sh quick t14
 ```
 
 Use the full cross-host check after changing shared modules, profiles, desktop
 infrastructure, Home Manager wiring, flake inputs or host definitions:
 
 ```sh
-.agents/skills/maintain-mrgnl-nixos/scripts/check.sh full t14
+scripts/check.sh full t14
 ```
 
 The checker:
