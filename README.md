@@ -49,9 +49,6 @@ and three future Intel/NVIDIA desktops.
 - A single Gruvbox palette keeps the desktop and terminal applications
   visually consistent.
 - Xwayland Satellite supports applications that still require X11.
-- The Xiaomi ultrawide is pinned to `3440x1440@100.000`, the maximum mode
-  exposed by the current connection.
-- The laptop panel and external monitor layout are selected per host.
 
 ### Main Keybinds
 
