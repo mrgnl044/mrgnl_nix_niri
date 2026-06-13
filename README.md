@@ -17,6 +17,35 @@ system services, hardware profiles, desktop behavior, applications, terminal
 tools and dotfiles. The same modular configuration targets my current ThinkPad
 and three future Intel/NVIDIA desktops.
 
+## Screenshots
+
+<table>
+  <tr>
+    <td width="50%">
+      <img src="docs/screenshots/desktop.png" alt="Niri desktop overview">
+      <p align="center"><b>Niri desktop</b><br>Scrollable tiling, Gruvbox and Noctalia</p>
+    </td>
+    <td width="50%">
+      <img src="docs/screenshots/shell.png" alt="Noctalia launcher and shell">
+      <p align="center"><b>Noctalia shell</b><br>Launcher, bar, clipboard and session controls</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%">
+      <img src="docs/screenshots/terminal.png" alt="Terminal development workflow">
+      <p align="center"><b>Terminal workflow</b><br>Kitty, Fish, LazyVim, LazyGit and Yazi</p>
+    </td>
+    <td width="50%">
+      <img src="docs/screenshots/gaming.png" alt="Steam gaming setup">
+      <p align="center"><b>Gaming</b><br>Steam, GameMode and NVIDIA-ready profiles</p>
+    </td>
+  </tr>
+</table>
+
+The gallery currently uses Gruvbox placeholders. Replace the four PNG files
+with real screenshots while keeping the same filenames and `1280x720` aspect
+ratio to update the GitHub page without changing the README layout.
+
 ## Highlights
 
 | | Feature | What it provides |
@@ -65,9 +94,9 @@ and three future Intel/NVIDIA desktops.
 | Base | NixOS 26.05, flakes, latest Linux kernel, systemd-boot |
 | Session | greetd, tuigreet, Niri, Noctalia 5, Xwayland Satellite |
 | Terminal | Kitty, Fish, Starship, tmux |
-| Editor | Neovim, LazyVim, LazyGit, Tree-sitter |
-| CLI | Yazi, btop, Fastfetch, Git/Delta, fzf, zoxide, ripgrep, fd, eza |
-| Development | GitHub CLI, ast-grep, hyperfine, lazydocker, jq, yq |
+| Editor | Neovim, LazyVim, Tree-sitter |
+| CLI | Yazi, btop, Fastfetch, Git/Delta, LazyGit, fzf, zoxide, ripgrep, fd, eza |
+| Development | GitHub CLI, ast-grep, hyperfine, LazyDocker, jq, yq |
 | Desktop | Firefox, Nautilus, Obsidian, Spotify, Telegram, Transmission |
 | Gaming | Steam, GameMode, 32-bit OpenGL/Vulkan support |
 | Network | NetworkManager and declarative AmneziaWG service wiring |

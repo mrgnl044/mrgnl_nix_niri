@@ -18,7 +18,6 @@
       fzf
       gcc
       git
-      lazygit
       ripgrep
       tree-sitter
       wl-clipboard

@@ -6,6 +6,7 @@
     gh
     hyperfine
     lazydocker
+    lazygit
     sd
     yq-go
   ];
