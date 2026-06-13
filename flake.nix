@@ -52,6 +52,10 @@
         i5-4060ti = [
           ./host/i5-4060ti/configuration.nix
         ];
+
+        i5-5060 = [
+          ./host/i5-5060/configuration.nix
+        ];
       };
     in
     {

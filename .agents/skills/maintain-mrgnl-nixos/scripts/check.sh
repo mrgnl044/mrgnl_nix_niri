@@ -79,6 +79,11 @@ if [[ "$mode" == "full" ]]; then
   nix build .#nixosConfigurations.i5-4060ti.config.system.build.toplevel \
     --no-link \
     --accept-flake-config
+
+  echo "==> building i5-5060"
+  nix build .#nixosConfigurations.i5-5060.config.system.build.toplevel \
+    --no-link \
+    --accept-flake-config
 fi
 
 echo "==> checking patch whitespace"
