@@ -19,32 +19,14 @@ and three future Intel/NVIDIA desktops.
 
 ## Screenshots
 
-<table>
-  <tr>
-    <td width="50%">
-      <img src="docs/screenshots/desktop.png" alt="Niri desktop overview">
-      <p align="center"><b>Niri desktop</b><br>Scrollable tiling, Gruvbox and Noctalia</p>
-    </td>
-    <td width="50%">
-      <img src="docs/screenshots/shell.png" alt="Noctalia launcher and shell">
-      <p align="center"><b>Noctalia shell</b><br>Launcher, bar, clipboard and session controls</p>
-    </td>
-  </tr>
-  <tr>
-    <td width="50%">
-      <img src="docs/screenshots/terminal.png" alt="Terminal development workflow">
-      <p align="center"><b>Terminal workflow</b><br>Kitty, Fish, LazyVim, LazyGit and Yazi</p>
-    </td>
-    <td width="50%">
-      <img src="docs/screenshots/gaming.png" alt="Steam gaming setup">
-      <p align="center"><b>Gaming</b><br>Steam, GameMode and NVIDIA-ready profiles</p>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img src="docs/screenshots/desktop.png" alt="Niri desktop with Noctalia and Kitty">
+</p>
 
-The gallery currently uses Gruvbox placeholders. Replace the four PNG files
-with real screenshots while keeping the same filenames and `1280x720` aspect
-ratio to update the GitHub page without changing the README layout.
+<p align="center">
+  <b>Niri desktop</b><br>
+  Noctalia shell, Kitty and Fastfetch on the active ThinkPad setup.
+</p>
 
 ## Highlights
 
