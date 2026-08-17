@@ -7,5 +7,6 @@
     ./monitoring.nix
     ./networking.nix
     ./shell-helpers.nix
+    ./tui.nix
   ];
 }
