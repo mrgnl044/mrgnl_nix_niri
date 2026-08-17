@@ -9,6 +9,7 @@
     ../../modules/profiles/laptop.nix
 
     ../../modules/networking/amneziawg.nix
+    ../../modules/networking/syncthing.nix
   ];
 
   networking.hostName = "t14";
