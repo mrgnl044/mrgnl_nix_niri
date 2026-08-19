@@ -8,8 +8,8 @@
     ../../modules/profiles/graphical.nix
     ../../modules/profiles/laptop.nix
 
-    ../../modules/networking/amneziawg.nix
     ../../modules/networking/syncthing.nix
+    ../../modules/networking/amneziawg.nix
   ];
 
   networking.hostName = "t14";
