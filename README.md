@@ -37,7 +37,7 @@ and three future Intel/NVIDIA desktops.
 | **Developer setup** | LazyVim everywhere | `nvim` is the default editor for the shell, Git tools, Yazi and common text MIME types |
 | **Gaming** | Steam + GameMode | 32-bit graphics support, performance mode and a Steam FHS wrapper that also works from `/etc/nixos` |
 | **Four hosts** | Intel + NVIDIA profiles | Active ThinkPad plus buildable RTX 4060 Ti 16 GB, RTX 4090 and RTX 5060 targets |
-| **Maintenance** | Automated cleanup | Weekly generation cleanup, Nix store optimisation and bounded journal storage |
+| **Maintenance** | Automated cleanup | Compressed swap, SSD trimming, Nix store optimisation and bounded journal storage |
 | **Validation** | Project checker | Parses every Nix file, validates Markdown, builds hosts and checks generated Niri/Noctalia configuration |
 | **Secrets** | Kept outside Git | AmneziaWG credentials remain root-owned under `/etc/amnezia/` |
 
@@ -202,8 +202,11 @@ session receives membership in the restricted `gamemode` group.
 ## Automatic Maintenance
 
 - systemd-boot keeps at most 10 generations;
+- zram handles memory pressure before the disk-backed swap;
+- `/tmp` is cleaned on boot and SSD filesystems are trimmed weekly;
 - Nix generations older than 14 days are removed weekly;
-- the Nix store is optimised weekly;
+- new Nix store paths are deduplicated immediately and the full store is
+  optimised weekly;
 - persistent journal storage is limited to 256 MiB and 14 days.
 
 ## Git Workflow
