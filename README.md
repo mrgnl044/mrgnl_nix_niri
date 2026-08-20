@@ -33,6 +33,7 @@ and three future Intel/NVIDIA desktops.
 | | Feature | What it provides |
 | --- | --- | --- |
 | **Desktop** | Niri + Noctalia 5 | Scrollable Wayland tiling, launcher, bar, notifications, clipboard, lock screen and session controls |
+| **Storage** | UDisks + GVfs | Removable drives appear in Nautilus and mount without root access |
 | **Consistent UI** | Gruvbox Dark | Shared colors across Noctalia, Niri, Kitty, btop, Yazi and LazyVim |
 | **Developer setup** | LazyVim everywhere | `nvim` is the default editor for the shell, Git tools, Yazi and common text MIME types |
 | **Gaming** | Steam + GameMode | 32-bit graphics support, performance mode and a Steam FHS wrapper that also works from `/etc/nixos` |
