@@ -32,7 +32,10 @@
         transition_on_startup = false;
       };
 
-      lockscreen.enabled = true;
+      lockscreen = {
+        enabled = true;
+        fingerprint = true;
+      };
 
       notification = {
         background_opacity = 0.82;

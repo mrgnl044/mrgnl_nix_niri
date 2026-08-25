@@ -37,6 +37,7 @@ tools and dotfiles for my current ThinkPad.
 | **Developer setup** | LazyVim everywhere | `nvim` is the default editor for the shell, Git tools, Yazi and common text MIME types |
 | **Gaming** | Steam + GameMode | 32-bit graphics support, performance mode and a Steam FHS wrapper that also works from `/etc/nixos` |
 | **Single host** | ThinkPad profile | One focused configuration for the active `t14` laptop |
+| **Biometrics** | Goodix fingerprint | Fingerprint unlock through fprintd for Noctalia, Greeter and sudo with password fallback |
 | **Maintenance** | Automated cleanup | Compressed swap, SSD trimming, Nix store optimisation and bounded journal storage |
 | **Validation** | Project checker | Parses every Nix file, validates Markdown, builds `t14` and checks generated Umbriel/Noctalia configuration |
 | **Secrets** | Kept outside Git | AmneziaWG credentials remain root-owned under `/etc/amnezia/` |
@@ -104,7 +105,7 @@ tools and dotfiles for my current ThinkPad.
 ├── modules/
 │   ├── core/                 boot, Nix, locale, networking, security
 │   ├── desktop/              Greeter and Umbriel system integration
-│   ├── hardware/             audio, Bluetooth, power, Intel GPU and VA-API
+│   ├── hardware/             audio, Bluetooth, fingerprint, power, Intel GPU and VA-API
 │   ├── networking/           AmneziaWG service wiring
 │   ├── packages/             system CLI, GUI and gaming software
 │   ├── profiles/             reusable system compositions
