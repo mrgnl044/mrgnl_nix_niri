@@ -39,6 +39,7 @@ tools and dotfiles for my current ThinkPad.
 | **Single host** | ThinkPad profile | One focused configuration for the active `t14` laptop |
 | **Biometrics** | Goodix fingerprint | Fingerprint unlock through fprintd for Noctalia, Greeter and sudo with password fallback |
 | **Maintenance** | Automated cleanup | Compressed swap, SSD trimming, Nix store optimisation and bounded journal storage |
+| **Reliable shutdown** | Bounded compositor stop | Umbriel gets five seconds to exit cleanly before systemd terminates a stuck DRM shutdown loop |
 | **Validation** | Project checker | Parses every Nix file, validates Markdown, builds `t14` and checks generated Umbriel/Noctalia configuration |
 | **Secrets** | Kept outside Git | AmneziaWG credentials remain root-owned under `/etc/amnezia/` |
 
