@@ -49,11 +49,11 @@ home_generation="$(
     ".#nixosConfigurations.${host}.config.home-manager.users.mrgnl.home.activationPackage" \
     --accept-flake-config
 )"
-niri_package="$(
+umbriel_package="$(
   nix build \
     --no-link \
     --print-out-paths \
-    ".#nixosConfigurations.${host}.config.programs.niri.package" \
+    ".#nixosConfigurations.${host}.config.home-manager.users.mrgnl.programs.umbriel.package" \
     --accept-flake-config
 )"
 noctalia_package="$(
@@ -64,31 +64,17 @@ noctalia_package="$(
     --accept-flake-config
 )"
 
-"$niri_package/bin/niri" validate \
-  -c "$home_generation/home-files/.config/niri/config.kdl"
+"$umbriel_package/bin/umbriel" validate \
+  -c "$home_generation/home-files/.config/umbriel/config.toml"
 "$noctalia_package/bin/noctalia" config validate \
   "$home_generation/home-files/.config/noctalia"
 
 if [[ "$mode" == "full" ]]; then
-  echo "==> building t14"
-  nix build .#nixosConfigurations.t14.config.system.build.toplevel \
+  echo "==> building $host"
+  nix build ".#nixosConfigurations.${host}.config.system.build.toplevel" \
     --no-link \
     --accept-flake-config
 
-  echo "==> building i5-4060ti"
-  nix build .#nixosConfigurations.i5-4060ti.config.system.build.toplevel \
-    --no-link \
-    --accept-flake-config
-
-  echo "==> building i5-4090"
-  nix build .#nixosConfigurations.i5-4090.config.system.build.toplevel \
-    --no-link \
-    --accept-flake-config
-
-  echo "==> building i5-5060"
-  nix build .#nixosConfigurations.i5-5060.config.system.build.toplevel \
-    --no-link \
-    --accept-flake-config
 fi
 
 echo "==> checking patch whitespace"

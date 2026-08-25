@@ -27,6 +27,21 @@
     noctalia = {
       url = "github:noctalia-dev/noctalia";
     };
+
+    noctalia-greeter = {
+      url = "github:noctalia-dev/noctalia-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    umbriel = {
+      url = "git+https://github.com/noctalia-dev/umbriel?submodules=1&shallow=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    xdg-desktop-portal-umbriel = {
+      url = "github:noctalia-dev/xdg-desktop-portal-umbriel";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -35,30 +50,28 @@
       nixos_hardware,
       home-manager,
       noctalia,
+      noctalia-greeter,
+      umbriel,
+      xdg-desktop-portal-umbriel,
       ...
     }:
     let
       system = "x86_64-linux";
       mkHost = import ./lib/mk-host.nix {
-        inherit home-manager nixpkgs noctalia;
+        inherit
+          home-manager
+          nixpkgs
+          noctalia
+          noctalia-greeter
+          umbriel
+          xdg-desktop-portal-umbriel
+          ;
       };
 
       hostModules = {
         t14 = [
           ./host/t14/configuration.nix
           nixos_hardware.nixosModules.lenovo-thinkpad
-        ];
-
-        i5-4060ti = [
-          ./host/i5-4060ti/configuration.nix
-        ];
-
-        i5-4090 = [
-          ./host/i5-4090/configuration.nix
-        ];
-
-        i5-5060 = [
-          ./host/i5-5060/configuration.nix
         ];
       };
     in

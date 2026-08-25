@@ -3,7 +3,7 @@
 {
   imports = [
     ../common/theme
-    ../desktop/niri
     ../desktop/noctalia
+    ../desktop/umbriel
   ];
 }

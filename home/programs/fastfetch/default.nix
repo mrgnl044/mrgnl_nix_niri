@@ -1,8 +1,7 @@
-{ lib, osConfig, ... }:
+{ ... }:
 
 let
   colors = import ../../common/colors.nix;
-  showGpu = osConfig.hardware.nvidia.enabled;
 in
 {
   programs.fastfetch = {
@@ -66,15 +65,11 @@ in
           key = "cpu";
           format = "{name}";
         }
-      ]
-      ++ lib.optionals showGpu [
         {
           type = "gpu";
           key = "gpu";
           format = "{name}";
         }
-      ]
-      ++ [
         {
           type = "memory";
           key = "memory";
